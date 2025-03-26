@@ -9,7 +9,7 @@ After scanning the hashes, the tool processes the results and saves them in a st
 Below is the expected output files:
 - results.json: Contains all successful scan results.
 - error.json: Records failed scan attempts.
-- Notfound.json: Lists hashes that were not found in the database.
+- NotFound.json: Lists hashes that were not found in the database.
 
 ## How to Use
 ### Requirements

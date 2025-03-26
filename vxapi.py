@@ -387,7 +387,7 @@ class CliManager:
                     else:
                         raise e
 
-                sys.stdout.write('\n')
+                #sys.stdout.write('\n')
         else:
             print(Color.control('No option was selected. To check CLI options, run script in help mode: \'{} -h\''.format(__file__)))
 

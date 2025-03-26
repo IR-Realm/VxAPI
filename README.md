@@ -5,7 +5,11 @@ This tool is a fork of the master repository VxAPI, designed to parse API respon
 - A valid API key
 - A text file containing a list of hashes
 
-After scanning the hashes, the tool processes the results and saves them in a structured JSON file for facilitate analysis and integration.
+After scanning the hashes, the tool processes the results and saves them in a structured JSON files for facilitate analysis and integration.
+Below is the expected output files:
+- results.json: Contains all successful scan results.
+- error.json: Records failed scan attempts.
+- Notfound.json: Lists hashes that were not found in the database.
 
 ## How to Use
 ### Requirements

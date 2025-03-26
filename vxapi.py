@@ -81,6 +81,8 @@ from cli.cli_prompts import CliPrompts
 from cli.cli_file_writer import CliFileWriter
 from cli.formatter.cli_limits_formatter import CliLimitsFormatter
 
+from jsonresults import JSONRESULTS
+
 from _version import __version__
 
 from copy import deepcopy
@@ -365,7 +367,10 @@ class CliManager:
                     if arg_iter['verbose'] is True:
                         CliMsgPrinter.print_showing_response(arg_iter, current_iteration)
 
-                    sys.stdout.buffer.write(iter_cli_object.get_result_msg().encode())
+                    #parse the respons
+                    result = json.loads(iter_cli_object.get_result_msg())
+                    obj = JSONRESULTS(result, args_iterations[0]['hash'])
+                    obj.run()
 
                     if iter_cli_object.api_object.if_request_success() is False and if_multiple_calls is True and iter_cli_object.api_object.api_expected_data_type == ApiCaller.CONST_EXPECTED_DATA_TYPE_JSON:
                         response_json = iter_cli_object.api_object.get_response_json()
